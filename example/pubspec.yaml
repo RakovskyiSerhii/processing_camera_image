@@ -19,7 +19,7 @@ dependencies:
     sdk: flutter
   camera: ^0.10.0+1
   rxdart: ^0.27.5
-  image: ^3.2.0
+  image: ^4.0.17
 
   processing_camera_image:
     # When depending on this package from a real application you should use:
