@@ -108,9 +108,10 @@ class IProcessingCameraImage implements ProcessingCameraImage {
       isFlipHoriozntal,
     );
 
-    List<int> imgData = imgP.asTypedList(((newImgWidth) * (newImgHeight)));
-    imglib.Image img =
-        imglib.Image.fromBytes(newImgWidth, newImgHeight, imgData);
+    ByteBuffer imgData =
+        imgP.asTypedList(((newImgWidth) * (newImgHeight))).buffer;
+    imglib.Image img = imglib.Image.fromBytes(
+        width: newImgWidth, height: newImgHeight, bytes: imgData);
 
     ffi.malloc.free(p);
     ffi.malloc.free(p1);
@@ -157,9 +158,10 @@ class IProcessingCameraImage implements ProcessingCameraImage {
       isFlipHoriozntal,
     );
 
-    List<int> imgData = imgP.asTypedList(newImgWidth * newImgHeight);
-    imglib.Image img =
-        imglib.Image.fromBytes(newImgWidth, newImgHeight, imgData);
+    ByteBuffer imgData =
+        imgP.asTypedList(((newImgWidth) * (newImgHeight))).buffer;
+    imglib.Image img = imglib.Image.fromBytes(
+        width: newImgWidth, height: newImgHeight, bytes: imgData);
 
     ffi.malloc.free(p);
     ffi.malloc.free(imgP);
@@ -205,9 +207,10 @@ class IProcessingCameraImage implements ProcessingCameraImage {
       isFlipHoriozntal,
     );
 
-    Uint8List imgData = imgP.asTypedList(newImgHeight * newImgWidth);
-    imglib.Image img =
-        imglib.Image.fromBytes(newImgWidth, newImgHeight, imgData);
+    ByteBuffer imgData =
+        imgP.asTypedList(((newImgWidth) * (newImgHeight))).buffer;
+    imglib.Image img = imglib.Image.fromBytes(
+        width: newImgWidth, height: newImgHeight, bytes: imgData);
 
     ffi.malloc.free(p);
     ffi.malloc.free(imgP);
@@ -274,10 +277,10 @@ class IProcessingCameraImage implements ProcessingCameraImage {
       isFlipHoriozntal,
     );
 
-    final imgData = imgP.asTypedList(((newImgWidth) * (newImgHeight)));
-
-    imglib.Image img =
-        imglib.Image.fromBytes(newImgWidth, newImgHeight, imgData);
+    ByteBuffer imgData =
+        imgP.asTypedList(((newImgWidth) * (newImgHeight))).buffer;
+    imglib.Image img = imglib.Image.fromBytes(
+        width: newImgWidth, height: newImgHeight, bytes: imgData);
 
     ffi.malloc.free(p);
     ffi.malloc.free(p1);
